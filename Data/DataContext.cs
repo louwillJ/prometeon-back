@@ -18,5 +18,7 @@ namespace prometeon_back.Data {
         public DbSet<Turno> MD_TURNO { get; set; }
         public DbSet<TurnoException> MD_TURNO_EXCEPTION { get; set; }
         public DbSet<PlantModel> MD_ORGANIZATIONAL_ITEM { get; set; }
+        public DbSet<OrdemProducao> MD_PRODUCTION_ORDER { get; set; }
+        public DbSet<OrdemStatus> MD_PRODUCTION_ORDER_STATUS { get; set; }
     }
 }
