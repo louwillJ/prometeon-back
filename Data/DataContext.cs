@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using prometeon_back.Models;
 using prometeon_new.Models;
 
 namespace prometeon_new.Data {
@@ -17,5 +18,6 @@ namespace prometeon_new.Data {
         public DbSet<Usuario> MD_USERS { get; set; }
         public DbSet<Turno> MD_TURNO { get; set; }
         public DbSet<TurnoException> MD_TURNO_EXCEPTION { get; set; }
+        public DbSet<PlantModel> MD_ORGANIZATIONAL_ITEM { get; set; }
     }
 }
