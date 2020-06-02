@@ -4913,9 +4913,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-new.csproj",
-      "projectName": "prometeon-new",
-      "projectPath": "C:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-new.csproj",
+      "projectUniqueName": "C:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-back.csproj",
+      "projectName": "prometeon-back",
+      "projectPath": "C:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-back.csproj",
       "packagesPath": "C:\\Users\\williansj\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\williansj\\Desktop\\prometeon-back\\obj\\",
       "projectStyle": "PackageReference",

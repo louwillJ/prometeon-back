@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using prometeon_new.Data;
-using prometeon_new.Models;
+using prometeon_back.Data;
+using prometeon_back.Models;
 
-namespace prometeon_new.Controllers {
+namespace prometeon_back.Controllers {
     [ApiController]
     [Route ("api/turnos")]
     public class TurnoController : ControllerBase {

@@ -3,8 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using prometeon_back.Models;
-using prometeon_new.Data;
-using prometeon_new.Models;
+using prometeon_back.Data;
 
 namespace prometeon_back.Controllers {
     [ApiController]

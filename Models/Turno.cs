@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace prometeon_new.Models {
+namespace prometeon_back.Models {
     public class Turno {
         [Key]
         public long TUR_ID { get; set; }

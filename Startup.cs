@@ -11,9 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using prometeon_new.Data;
+using prometeon_back.Data;
 
-namespace prometeon_new {
+namespace prometeon_back {
     public class Startup {
         public Startup (IConfiguration configuration) {
             Configuration = configuration;

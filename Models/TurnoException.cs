@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace prometeon_new.Models
+namespace prometeon_back.Models
 {
     public class TurnoException
     {

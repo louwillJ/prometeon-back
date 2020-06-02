@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using prometeon_back.Models;
-using prometeon_new.Models;
 
-namespace prometeon_new.Data {
+namespace prometeon_back.Data {
     public class DataContext : DbContext {
         public DataContext (DbContextOptions<DataContext> options) : base (options) {
 

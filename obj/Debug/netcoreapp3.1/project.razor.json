@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-new.csproj",
+  "FilePath": "c:\\Users\\williansj\\Desktop\\prometeon-back\\prometeon-back.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20518,7 +20518,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "prometeon_new",
+  "RootNamespace": "prometeon_back",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

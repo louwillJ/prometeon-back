@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "prometeon_new": {
+    "prometeon_back": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
