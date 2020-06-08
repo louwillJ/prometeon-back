@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +16,17 @@ namespace prometeon_back.Controllers {
 
         public async Task<ActionResult<List<Usuario>>> Get ([FromServices] DataContext context) {
             try {
-                var usuarios = await context.MD_USERS.ToListAsync ();
-                return usuarios;
+                var usuarios = (from u in context.MD_USERS join ual in context.MD_ACCESS_LEVEL on u.USR_ACCESS_LEVEL equals ual.LEV_ID select new Usuario {
+                    USR_ID = u.USR_ID,
+                        USR_EMAIL = u.USR_EMAIL,
+                        USR_NAME = u.USR_NAME,
+                        USR_SENHA = u.USR_SENHA,
+                        USR_ACTIVE = u.USR_ACTIVE,
+                        USR_ACCESS_LEVEL = u.USR_ACCESS_LEVEL,
+                        UserAccessLevel = ual
+                }).ToListAsync ();
+
+                return await usuarios;
             } catch (System.Exception ex) {
                 return StatusCode (500, ex.Message);
             }

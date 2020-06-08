@@ -1,23 +1,31 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using prometeon_back.Data;
 using prometeon_back.Models;
 
-namespace prometeon_back.Controllers
-{
+namespace prometeon_back.Controllers {
     [ApiController]
     [Route ("api/turno/excecoes")]
-    public class TurnoExceptionController : ControllerBase
-    {
+    public class TurnoExceptionController : ControllerBase {
         [HttpGet]
         [Route ("")]
-
         public async Task<ActionResult<List<TurnoException>>> Get ([FromServices] DataContext context) {
             try {
-                var excecoes = await context.MD_TURNO_EXCEPTION.ToListAsync ();
-                return excecoes;
+                var excecoes = (from te in context.MD_TURNO_EXCEPTION join t in context.MD_TURNO on te.TUR_ID equals t.TUR_ID select new TurnoException {
+                    EXC_ID = te.EXC_ID,
+                        EXC_REST = te.EXC_REST,
+                        EXC_NOT_STANDARD = te.EXC_NOT_STANDARD,
+                        EXC_BEGIN = te.EXC_BEGIN,
+                        EXC_END = te.EXC_END,
+                        EXC_REASON = te.EXC_REASON,
+                        TUR_ID = te.TUR_ID,
+                        Turno = t
+                }).ToListAsync ();
+
+                return await excecoes;
             } catch (System.Exception ex) {
                 return StatusCode (500, ex.Message);
             }
@@ -26,13 +34,12 @@ namespace prometeon_back.Controllers
 
         [HttpGet]
         [Route ("{id:long}")]
-
         public async Task<ActionResult<TurnoException>> GetById ([FromServices] DataContext context, long id) {
             try {
                 var excecao = await context.MD_TURNO_EXCEPTION.FirstOrDefaultAsync (x => x.TUR_ID == id);
                 return excecao;
             } catch (System.Exception ex) {
-                return StatusCode (500, ex.Message);
+                return StatusCode (500, ex);
             }
 
         }
@@ -57,7 +64,7 @@ namespace prometeon_back.Controllers
         [HttpPut]
         [Route ("{id:long}")]
         public async Task<ActionResult> Put ([FromServices] DataContext context, [FromBody] TurnoException model, long id) {
-            if (id != model.TUR_ID) {
+            if (id != model.EXC_ID) {
                 return BadRequest ();
             }
 

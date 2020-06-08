@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace prometeon_back.Models {
@@ -10,11 +10,8 @@ namespace prometeon_back.Models {
         public string TUR_END { get; set; }
         public string TUR_INTERVAL_BEGIN { get; set; }
         public string TUR_INTERVAL_END { get; set; }
-        public string TUR_VALIDATE_BEGIN { get; set; }
-        public string TUR_VALIDATE_END { get; set; }
-        public int TUR_ACTIVE { get; set; }
-        // public ICollection<TurnoException> TurnoException { get; set; }
+        public DateTime TUR_VALIDATE_BEGIN { get; set; }
+        public DateTime TUR_VALIDATE_END { get; set; }
+        public bool TUR_ACTIVE { get; set; }
     }
-
-
 }

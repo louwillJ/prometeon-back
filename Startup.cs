@@ -28,8 +28,8 @@ namespace prometeon_back {
                     .AllowAnyMethod ()
                     .AllowAnyHeader ();
             }));
-            services.AddDbContext<DataContext> (opt => opt.UseInMemoryDatabase ("Database"));
-            // services.AddDbContext<DataContext> (opt => opt.UseSqlServer(Configuration.GetConnectionString ("ConnectionString")));
+            // services.AddDbContext<DataContext> (opt => opt.UseInMemoryDatabase ("Database"));
+            services.AddDbContext<DataContext> (opt => opt.UseSqlServer(Configuration.GetConnectionString ("ConnectionString")));
             services.AddScoped<DataContext, DataContext> ();
             services.AddControllers ();
         }
